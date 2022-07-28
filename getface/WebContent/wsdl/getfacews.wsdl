@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://getface.tdr.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://getface.tdr.com" xmlns:intf="http://getface.tdr.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://getface.tdr.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="searchfaces">
+    <complexType>
+     <sequence>
+      <element name="inpicdata" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchfacesResponse">
+    <complexType>
+     <sequence>
+      <element name="searchfacesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="detectfaces">
+    <complexType>
+     <sequence>
+      <element name="inpicdata" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="detectfacesResponse">
+    <complexType>
+     <sequence>
+      <element name="detectfacesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addspecface">
+    <complexType>
+     <sequence>
+      <element name="inpicdata" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addspecfaceResponse">
+    <complexType>
+     <sequence>
+      <element name="addspecfaceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="reginfos">
+    <complexType>
+     <sequence>
+      <element name="indata" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="reginfosResponse">
+    <complexType>
+     <sequence>
+      <element name="reginfosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addspecfaceRequest">
+
+      <wsdl:part element="impl:addspecface" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addspecfaceResponse">
+
+      <wsdl:part element="impl:addspecfaceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchfacesResponse">
+
+      <wsdl:part element="impl:searchfacesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="reginfosRequest">
+
+      <wsdl:part element="impl:reginfos" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="detectfacesRequest">
+
+      <wsdl:part element="impl:detectfaces" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchfacesRequest">
+
+      <wsdl:part element="impl:searchfaces" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="detectfacesResponse">
+
+      <wsdl:part element="impl:detectfacesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="reginfosResponse">
+
+      <wsdl:part element="impl:reginfosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="getfacews">
+
+      <wsdl:operation name="searchfaces">
+
+         <wsdl:input message="impl:searchfacesRequest" name="searchfacesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchfacesResponse" name="searchfacesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="detectfaces">
+
+         <wsdl:input message="impl:detectfacesRequest" name="detectfacesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:detectfacesResponse" name="detectfacesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addspecface">
+
+         <wsdl:input message="impl:addspecfaceRequest" name="addspecfaceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addspecfaceResponse" name="addspecfaceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="reginfos">
+
+         <wsdl:input message="impl:reginfosRequest" name="reginfosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:reginfosResponse" name="reginfosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="getfacewsSoapBinding" type="impl:getfacews">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="searchfaces">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchfacesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchfacesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="detectfaces">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="detectfacesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="detectfacesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addspecface">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addspecfaceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addspecfaceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="reginfos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="reginfosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="reginfosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="getfacewsService">
+
+      <wsdl:port binding="impl:getfacewsSoapBinding" name="getfacews">
+
+         <wsdlsoap:address location="http://localhost:8080/getface/services/getfacews"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from getfacewsService WSDL service -->
+
+  <service name="getfacews" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://getface.tdr.com"/>
+      <parameter name="wsdlServiceElement" value="getfacewsService"/>
+      <parameter name="schemaQualified" value="http://getface.tdr.com"/>
+      <parameter name="wsdlServicePort" value="getfacews"/>
+      <parameter name="className" value="com.tdr.getface.getfacews"/>
+      <parameter name="wsdlPortType" value="getfacews"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://getface.tdr.com" xmlns:retNS="http://getface.tdr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="searchfaces" qname="operNS:searchfaces" returnQName="retNS:searchfacesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://getface.tdr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:inpicdata" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://getface.tdr.com" xmlns:retNS="http://getface.tdr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="detectfaces" qname="operNS:detectfaces" returnQName="retNS:detectfacesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://getface.tdr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:inpicdata" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://getface.tdr.com" xmlns:retNS="http://getface.tdr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addspecface" qname="operNS:addspecface" returnQName="retNS:addspecfaceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://getface.tdr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:inpicdata" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://getface.tdr.com" xmlns:retNS="http://getface.tdr.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="reginfos" qname="operNS:reginfos" returnQName="retNS:reginfosReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://getface.tdr.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:indata" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="reginfos addspecface searchfaces detectfaces"/>
+
+  </service>
+</deployment>
